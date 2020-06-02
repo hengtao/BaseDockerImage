@@ -24,7 +24,7 @@ RUN yum groupinstall "Development Tools" -y && \
 RUN conda install R=3.6.0 -y && \
 	conda create --name python=2.7.18 -y && \
 	conda install python=3.8.2 -y && \
-	pip install Cython --timeout 300
+	pip install Cython numpy --timeout 300
 	
 ## software&&packages
 RUN wget https://mirrors.ustc.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
@@ -37,4 +37,4 @@ RUN wget https://mirrors.ustc.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-
 	conda config --add channels bioconda && \
 	conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/ && \
 	conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/ && \
-	conda config --set show_channel_urls yes
+	conda config --set show_channel_urls yes 
